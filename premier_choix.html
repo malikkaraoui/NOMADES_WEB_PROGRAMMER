@@ -53,9 +53,37 @@
     <!-- boutons avec data-action pour event delegation -->
     <button class="choice" data-action="utilisateur" type="button" aria-label="Choisir Utilisateur">Utilisateur</button>
     <button class="choice" data-action="créateur" type="button" aria-label="Choisir Créateur">Créateur</button>
-    <button class="choice" data-action="découvrir" type="button" aria-label="Découvrir le catalogue">Découvrir</button>
 
     <div class="message" id="message" role="status" aria-live="polite">Faites un choix pour commencer</div>
+
+    <!-- Vues conditionnelles : user store et creator form -->
+    <div id="user-store" style="display:none; margin-top:24px; width:100%; max-width:960px;">
+      <h2 style="margin:0 0 12px 0; color:#cfeee3; text-align:center;">Marketplace — Contrats disponibles</h2>
+      <div id="cards" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px;"></div>
+    </div>
+
+    <div id="creator-form" style="display:none; margin-top:24px; width:100%; max-width:720px; color:#cfeee3;">
+      <h2 style="margin:0 0 12px 0; color:#cfeee3; text-align:center;">Créateur — Paramétrage du contrat</h2>
+      <form id="form-creator" style="display:flex; flex-direction:column; gap:10px;">
+        <input name="name" placeholder="Nom du contrat (ex: Billetterie)" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;" />
+        <input name="symbol" placeholder="Symbole (ex: TICKET)" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;" />
+        <textarea name="description" placeholder="Description courte" rows="3" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;"></textarea>
+        <input name="initialSupply" placeholder="Supply initial (optionnel)" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;" />
+        <select name="pricing" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;">
+          <option value="free">Gratuit</option>
+          <option value="freemium">Freemium</option>
+          <option value="payperuse">Paiement à l'usage</option>
+          <option value="licence">Licence (NFT)</option>
+        </select>
+        <label style="display:flex; gap:8px; align-items:center;">
+          <input type="checkbox" name="allowInterop" /> Permettre l'interopérabilité (autres contrats)
+        </label>
+        <div style="display:flex; gap:8px;">
+          <button type="submit" class="choice" style="flex:1;">Enregistrer & Prévisualiser</button>
+          <button type="button" id="btn-reset" class="choice" style="flex:0; background:#0b8457;">Réinitialiser</button>
+        </div>
+      </form>
+    </div>
   </div>
 
   <script src="essai_clean.js" defer></script>
@@ -75,7 +103,7 @@
       window.App = window.App || {};
       window.App.showMessage = showMessage;
 
-      // Event delegation : un seul écouteur pour les 3 boutons
+      // Event delegation : un seul écouteur pour les boutons utilisateur/créateur
       container.addEventListener('click', function (e) {
         var btn = e.target.closest('button[data-action]');
         if (!btn) return;
@@ -83,6 +111,18 @@
         // utilisation de l'API publique exposée dans essai_clean.js
         if (window.App && typeof window.App.premiereChoix === 'function') {
           window.App.premiereChoix(action);
+        }
+
+        // Affichage conditionnel selon le choix
+        var store = document.getElementById('user-store');
+        var form = document.getElementById('creator-form');
+        if (action === 'utilisateur') {
+          store.style.display = '';
+          form.style.display = 'none';
+          renderContracts();
+        } else if (action === 'créateur') {
+          store.style.display = 'none';
+          form.style.display = '';
         }
       });
 
@@ -102,6 +142,112 @@
           document.documentElement.classList.add('reduced-motion');
         }
       }catch(e){}
+      
+      /*
+       * Marketplace rendering (minimaliste) :
+       * - On charge une liste d'exemples et on rend des cartes.
+       * - Au clic sur "Installer", on demande la connexion wallet (si disponible).
+       */
+      var contracts = [
+        { id:1, title:'Billetterie NFT', desc:'Émission NFT billets + contrôle accès', rating:4.5, author:'ConcertLab' },
+        { id:2, title:'Escrow Pay', desc:"Escrow on-chain pour ventes et paiements programmés", rating:4.0, author:'SafePay' },
+        { id:3, title:'Subscription Billing', desc:'Paiement récurrent avec relances et refunds', rating:4.2, author:'SubTech' }
+      ];
+
+      function renderContracts(){
+        var cards = document.getElementById('cards');
+        if (!cards) return;
+        // clear
+        cards.innerHTML = '';
+        contracts.forEach(function(c){
+          var card = document.createElement('div');
+          card.style.background = 'linear-gradient(135deg,#071,#012)';
+          card.style.padding = '12px';
+          card.style.borderRadius = '10px';
+          card.style.color = '#cfeee3';
+          card.style.display = 'flex';
+          card.style.flexDirection = 'column';
+          card.style.gap = '8px';
+
+          var thumb = document.createElement('div');
+          thumb.style.height = '100px';
+          thumb.style.borderRadius = '8px';
+          thumb.style.background = 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.06), rgba(0,0,0,0.06))';
+          thumb.textContent = c.title;
+          thumb.style.display = 'flex';
+          thumb.style.alignItems = 'center';
+          thumb.style.justifyContent = 'center';
+          thumb.style.fontWeight = '600';
+
+          var title = document.createElement('div'); title.textContent = c.title; title.style.fontWeight='700';
+          var desc = document.createElement('div'); desc.textContent = c.desc; desc.style.fontSize='13px'; desc.style.opacity='0.95';
+          var meta = document.createElement('div'); meta.style.display='flex'; meta.style.justifyContent='space-between'; meta.style.alignItems='center';
+          var author = document.createElement('div'); author.textContent = 'par ' + c.author; author.style.fontSize='12px'; author.style.opacity='0.9';
+          var stars = document.createElement('div'); stars.innerHTML = renderStars(c.rating);
+          meta.appendChild(author); meta.appendChild(stars);
+
+          var btn = document.createElement('button'); btn.className='choice'; btn.textContent='Installer';
+          btn.addEventListener('click', function(){
+            // demande de connexion au wallet si disponible
+            connectWallet().then(function(acc){
+              if (acc) {
+                showMessage('Wallet connecté: ' + acc[0]);
+                // ici lancer le flow d'installation / déploiement
+              } else {
+                showMessage('Aucun wallet détecté — installez MetaMask ou utilisez une extension compatible.');
+              }
+            }).catch(function(err){
+              showMessage('Connexion wallet annulée ou erreur');
+            });
+          });
+
+          card.appendChild(thumb);
+          card.appendChild(title);
+          card.appendChild(desc);
+          card.appendChild(meta);
+          card.appendChild(btn);
+          cards.appendChild(card);
+        });
+      }
+
+      function renderStars(rating){
+        var out='';
+        var full = Math.floor(rating);
+        for(var i=0;i<full;i++) out += '★';
+        if(rating - full >= 0.5) out += '☆';
+        return '<span style="color:#ffd54a">'+out+'</span>';
+      }
+
+      function connectWallet(){
+        return new Promise(function(resolve, reject){
+          if (window.ethereum && window.ethereum.request) {
+            window.ethereum.request({ method: 'eth_requestAccounts' }).then(function(accounts){
+              resolve(accounts);
+            }).catch(function(err){ reject(err); });
+          } else {
+            resolve(null);
+          }
+        });
+      }
+
+      // Form interactions: preview & reset
+      var form = document.getElementById('form-creator');
+      if (form) {
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          var data = new FormData(form);
+          var summary = 'Prévisualisation:\n' +
+            'Nom: ' + (data.get('name')||'<vide>') + '\n' +
+            'Symbole: ' + (data.get('symbol')||'<vide>') + '\n' +
+            'Desc: ' + (data.get('description')||'<vide>') + '\n' +
+            'Pricing: ' + (data.get('pricing')||'<vide>') + '\n' +
+            'Interop: ' + (data.get('allowInterop') ? 'Oui' : 'Non');
+          // Affichage simple
+          showMessage(summary);
+        });
+        var btnReset = document.getElementById('btn-reset');
+        if (btnReset) btnReset.addEventListener('click', function(){ form.reset(); showMessage('Formulaire réinitialisé'); });
+      }
     })();
   </script>
 </body>
