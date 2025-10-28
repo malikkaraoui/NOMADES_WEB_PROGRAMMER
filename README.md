@@ -1,6 +1,6 @@
-# 🏭 Place de Marché Industrielle de Smart-Contracts
+![By Malik Karaoui](https://img.shields.io/badge/By-Malik%20Karaoui-10B981)
 
-[![Synthèse](https://img.shields.io/badge/Synth%C3%A8se-Voir%20la%20synth%C3%A8se-blue?style=flat-square)](SYNTHESE.md)
+# 🏭 Place de Marché Industrielle de Smart-Contracts
 
 ## Vision générale
 
@@ -13,8 +13,3 @@ La **plateforme** se charge de :
 L’objectif :  
 > **Industrialiser la production et la distribution de smart-contracts**,  
 > tout en assurant sécurité, transparence et interopérabilité.
-
-
-## 🔧 Diagramme global
-
-Le diagramme ci-dessous illustre la vision complète du projet :
