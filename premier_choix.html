@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Premier choix — Smart Contracts Studio</title>
+  <style>
+    html,body { height:100%; margin:0; }
+    body {
+      background: #000; /* fond noir */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, sans-serif;
+      color: #fff;
+    }
+    .container {
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      align-items:center;
+      justify-content:center;
+    }
+    button.choice {
+      background:#16a34a; /* vert */
+      color:#051923;
+      border:none;
+      padding:14px 28px;
+      font-size:18px;
+      border-radius:8px;
+      cursor:pointer;
+      min-width:220px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    }
+    button.choice:active { transform: translateY(1px); }
+    .message {
+      margin-top:18px;
+      padding:10px 14px;
+      background: rgba(255,255,255,0.04);
+      border-radius:6px;
+      color:#cfeee3;
+      min-height:28px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      max-width:420px;
+      text-align:center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="choice" id="btn-utilisateur">Utilisateur</button>
+    <button class="choice" id="btn-createur">Créateur</button>
+    <button class="choice" id="btn-decouvrir">Découvrir</button>
+
+    <div class="message" id="message">Faites un choix pour commencer</div>
+  </div>
+
+  <script src="essai_clean.js"></script>
+  <script>
+    const msgEl = document.getElementById('message');
+    function showMessage(text){
+      msgEl.textContent = text;
+    }
+    // expose showMessage so essai_clean can use it
+    window.showMessage = showMessage;
+
+    document.getElementById('btn-utilisateur').addEventListener('click', ()=>{
+      premiereChoix('utilisateur');
+    });
+    document.getElementById('btn-createur').addEventListener('click', ()=>{
+      premiereChoix('créateur');
+    });
+    document.getElementById('btn-decouvrir').addEventListener('click', ()=>{
+      premiereChoix('découvrir');
+    });
+  </script>
+</body>
+</html>
