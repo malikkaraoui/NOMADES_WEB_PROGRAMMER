@@ -53,6 +53,7 @@ flowchart TB
     AIAgents[Agents: recommander & préremplir templates]
     AIRuntimeAssist[Run-time assistance: optimiser gas, detect anomalies]
     AIMarket[Marketplace de skills IA]
+      MCP[MCP : Model-Contract Protocol \n(indexation, discovery, autorisations IA)]
   end
 
   subgraph BIZ[Business model & Pricing]
@@ -123,6 +124,9 @@ flowchart TB
   AISem --> AIAgents
   AIAgents --> UInstall
   AIRuntimeAssist --> PMonitor
+  MCP --> AISem
+  MCP --> PAPIs
+  PAPIs --> MCP
 
   MVPCatalog --> PCatalogue
   MVPAudit --> PCert
