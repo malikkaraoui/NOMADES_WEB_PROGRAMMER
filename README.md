@@ -152,19 +152,3 @@ flowchart TB
   class CRE,PLATFORM,USERS,SEC,AI,BIZ,MVP,ROAD,RISK zone;
 
 ```
-
-Instructions
-------------
-
-- Pour prévisualiser : ouvrir ce `README.md` dans VS Code avec une extension Mermaid (ex : "Markdown Preview Mermaid Support" ou "Mermaid Preview").
-- Pour générer une image depuis la ligne de commande : installer `mmdc` (mermaid‑cli) via npm et exécuter `mmdc -i diagram.mmd -o diagram.png` (optionnel, nécessite Node.js).
-
-KPI / Next steps
------------------
-
-- Vérifier le rendu du diagramme dans VS Code.
-- Compléter les descriptions détaillées pour chaque composant si besoin.
-
----
-
-Fichier lié : `diagram.mmd` (diagramme source détaillé)
