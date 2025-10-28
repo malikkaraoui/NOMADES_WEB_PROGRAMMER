@@ -1,14 +1,30 @@
-# Place de marché industrielle de smart-contracts
+# 🏭 Place de Marché Industrielle de Smart-Contracts
 
-Vision générale
-----------------
+## Vision générale
 
-Une place de marché industrielle de smart-contracts : des modules audités, packagés et interopérables (comme des « apps ») qu’un créateur publie et un utilisateur installe/exécute ; la plateforme assure validation, routage multi‑chain, monitoring et prélève des frais à l’usage.
+Une **place de marché industrielle de smart-contracts** :  
+des modules **audités**, **packagés** et **interopérables** (comme des “apps”),  
+qu’un **créateur** publie et qu’un **utilisateur** installe ou exécute.  
 
-Diagramme
---------
+La **plateforme** se charge de :
+- la **validation** (analyse, audit automatique et humain),
+- le **routage multi-chain** (exécution sur Ethereum, Polygon, Solana…),
+- le **monitoring** (logs, SLO, rollback),
+- et **perçoit des frais** à l’usage selon le modèle économique choisi.
 
-Le diagramme suivant décrit la vision globale et les vues principales (Créateurs, Plate‑forme, Utilisateurs), ainsi que la sécurité, l'intégration IA, le modèle économique, le MVP, la roadmap et les risques.
+L’objectif :  
+> **Industrialiser la production et la distribution de smart-contracts**,  
+> tout en assurant sécurité, transparence et interopérabilité.
+
+---
+
+## 🔧 Diagramme global
+
+Le diagramme ci-dessous illustre la vision complète du projet :
+- les **créateurs** et leurs outils (IDE, packaging, monétisation)  
+- la **plateforme** (validation, exécution, APIs, monitoring)  
+- les **utilisateurs** (installation, transparence, support)  
+- ainsi que les volets **sécurité, IA, business model, MVP, roadmap et risques**.
 
 ```mermaid
 flowchart TB
@@ -40,7 +56,7 @@ flowchart TB
 
   subgraph USERS[Utilisateurs / Consommateurs]
     direction TB
-    UInstall[Installer & configurer \n(choix, paramétrage, bind wallet, déployer en 1‑clic)]
+    UInstall[Installer & configurer \n(choix, paramétrage, bind wallet, déployer en 1-clic)]
     UModes[Modes d'utilisation: Utilisateurs finaux / Entreprises / M2M]
     UTransparence[Transparence: voir le code audité + frais avant exécution]
     UDashboard[Tableau de bord: logs, solde, historique]
@@ -77,14 +93,14 @@ flowchart TB
     direction TB
     MVPCatalog[Catalogue + upload simple (ERC-20 / ERC-721 + escrow)]
     MVPAudit[Pipeline d'analyse automatique]
-    MVPDeploy[Déploiement 1‑clic sur 1 chaîne (ex : Polygon)]
+    MVPDeploy[Déploiement 1-clic sur 1 chaîne (ex : Polygon)]
     MVPDash[Dashboard basique : logs, tx list, metrics]
     MVPSDK[Docs + SDK minimal (REST)]
   end
 
   subgraph ROAD[Roadmap 6–18 mois]
     direction TB
-    RMultiChain[6–9m : multi‑chain, exécution hébergée, audits humains payants]
+    RMultiChain[6–9m : multi-chain, exécution hébergée, audits humains payants]
     RMarketplace[9–12m : marketplace avancée, composabilité de patterns]
     RIA[12–18m : intégration IA, DAO partielle, partenaires assurance]
   end
@@ -150,5 +166,3 @@ flowchart TB
 
   classDef zone fill:#f9f,stroke:#333,stroke-width:1px;
   class CRE,PLATFORM,USERS,SEC,AI,BIZ,MVP,ROAD,RISK zone;
-
-```
