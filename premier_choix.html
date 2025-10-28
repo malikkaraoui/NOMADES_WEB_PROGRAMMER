@@ -49,32 +49,60 @@
   </style>
 </head>
 <body>
-  <div class="container">
-    <button class="choice" id="btn-utilisateur">Utilisateur</button>
-    <button class="choice" id="btn-createur">Créateur</button>
-    <button class="choice" id="btn-decouvrir">Découvrir</button>
+  <div class="container" role="main" aria-labelledby="title">
+    <!-- boutons avec data-action pour event delegation -->
+    <button class="choice" data-action="utilisateur" type="button" aria-label="Choisir Utilisateur">Utilisateur</button>
+    <button class="choice" data-action="créateur" type="button" aria-label="Choisir Créateur">Créateur</button>
+    <button class="choice" data-action="découvrir" type="button" aria-label="Découvrir le catalogue">Découvrir</button>
 
-    <div class="message" id="message">Faites un choix pour commencer</div>
+    <div class="message" id="message" role="status" aria-live="polite">Faites un choix pour commencer</div>
   </div>
 
-  <script src="essai_clean.js"></script>
-  <script>
-    const msgEl = document.getElementById('message');
-    function showMessage(text){
-      msgEl.textContent = text;
-    }
-    // expose showMessage so essai_clean can use it
-    window.showMessage = showMessage;
+  <script src="essai_clean.js" defer></script>
+  <script defer>
+    // Code d'initialisation UI : lisible, accessible et sans polluer le scope global
+    (function(){
+      var container = document.querySelector('.container');
+      var msgEl = document.getElementById('message');
 
-    document.getElementById('btn-utilisateur').addEventListener('click', ()=>{
-      premiereChoix('utilisateur');
-    });
-    document.getElementById('btn-createur').addEventListener('click', ()=>{
-      premiereChoix('créateur');
-    });
-    document.getElementById('btn-decouvrir').addEventListener('click', ()=>{
-      premiereChoix('découvrir');
-    });
+      // Fonction d'affichage centralisée (accessible par le module JS)
+      function showMessage(text){
+        if (!msgEl) return;
+        msgEl.textContent = String(text || '');
+      }
+
+      // Expose la fonction d'affichage via l'API App (essai_clean.js lira cette fonction)
+      window.App = window.App || {};
+      window.App.showMessage = showMessage;
+
+      // Event delegation : un seul écouteur pour les 3 boutons
+      container.addEventListener('click', function (e) {
+        var btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+        var action = btn.getAttribute('data-action');
+        // utilisation de l'API publique exposée dans essai_clean.js
+        if (window.App && typeof window.App.premiereChoix === 'function') {
+          window.App.premiereChoix(action);
+        }
+      });
+
+      // Accessibilité clavier : Enter/Space
+      container.addEventListener('keydown', function (e) {
+        var btn = e.target.closest('button[data-action]');
+        if (!btn) return;
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+
+      // Petite amélioration visuelle si utilisateur réduit les animations
+      try{
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('reduced-motion');
+        }
+      }catch(e){}
+    })();
   </script>
 </body>
 </html>
