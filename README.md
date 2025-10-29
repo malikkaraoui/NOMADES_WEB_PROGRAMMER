@@ -1,15 +1,18 @@
 ![By Malik Karaoui](https://img.shields.io/badge/By-Malik%20Karaoui-10B981)
 
-# 🏭 Place de Marché Industrielle de Smart-Contracts
 
-## Vision générale
+## 🧬 Identité approfondie — NECTARX
 
-Une **place de marché industrielle de smart-contracts** :  
-des modules **audités**, **packagés** et **interopérables** (comme des “apps”),  
-qu’un **créateur** publie et qu’un **utilisateur** installe ou exécute.  
+>  🐝   “Piquer sans se faire prendre.”
+> 
 
-La **plateforme** se charge de :
+C’est l’art de la stratégie, du rendement subtil, du plaisir bien dosé.   On ne “vole” pas le nectar des autres, on le fait fructifier ensemble.   Dans NectarX, chacun apporte son miel, goûte celui du voisin, et s’enrichit du désir collectif de rendement.
 
-L’objectif :  
-> **Industrialiser la production et la distribution de smart-contracts**,  
-> tout en assurant sécurité, transparence et interopérabilité.
+## 🧠 CONCEPT : *Le Laboratoire du Rendement Défendu*
+
+NECTARX est la première plateforme de stratégies communautaires où chacun peut goûter, copier ou créer des rendements à son image.
+Connecte ton wallet, découvre les stratégies qui buzzent, simule la tienne dans le *HiveLab*, et récolte ton nectar.
+
+
+Link = https://deadpan-opossum-d1d.notion.site/Choix-du-projet-Nomades-29b5cdaeec2180afbd42c9f06686d27e
+
