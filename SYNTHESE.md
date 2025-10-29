@@ -1,92 +1,123 @@
-# Synthèse — Smart Contracts Studio
+# Synthèse — NECTARX
 
 ## Concept global
 
-Le Smart Contracts Studio est une plateforme no-code qui démocratise la création, la gestion et l’exploitation des contrats intelligents. Elle vise à rendre les smart contracts aussi accessibles qu’une application mobile, et leur déploiement aussi simple qu’un clic.
+**NECTARX** est une plateforme communautaire de stratégies de rendement crypto — un laboratoire social où les utilisateurs explorent, partagent et copient des stratégies en temps réel.
+Elle transforme la finance décentralisée (DeFi) en une expérience accessible, vivante et collaborative, où chacun peut récolter le fruit de la ruche : le **nectar**, symbole du rendement partagé.
 
-Le service repose sur deux piliers complémentaires :
+Le concept repose sur trois piliers :
 
-1. Un studio de création et de gestion pour les développeurs, entreprises et créateurs.
-2. Un catalogue intelligent pour les utilisateurs finaux ou agents autonomes (humains ou IA).
+1. **Le HiveFeed**, un flux en direct de stratégies performantes, classées minute par minute.
+2. **Le HiveLab**, un espace de simulation et de création de stratégies.
+3. **Le NectarDrop**, un système de récompenses et d’airdrops liés à l’activité et à la contribution.
 
----
-
-## Use Case 1 — Le Studio de Création (édition, déploiement, suivi, monétisation)
-
-C’est l’espace des créateurs de smart contracts : développeurs, entreprises, auditeurs, legal‑tech, ou freelances Web3.
-
-### Fonctionnalités clés
-
-- Éditeur visuel no‑code / low‑code : création de contrats à partir de blocs logiques (acteurs, conditions, événements, actions).
-- Déploiement multi‑chaîne : Ethereum, Polygon, BNB, Avalanche, Solana, ou toute L1/L2 connectée.
-- Suivi en temps réel : logs, événements, gas, appels, alertes d’erreur, mises à jour via proxy pattern.
-- Marketplace interne : publication, partage et monétisation via licence, pourcentage d’usage ou abonnement.
-
-### Objectif
-
-Créer un écosystème durable de créateurs qui partagent leurs contrats, capitalisent sur leurs expertises, et génèrent des revenus récurrents à chaque utilisation. Un « GitHub + App Store » des smart contracts, mais simplifié, traçable et rentable.
+L’objectif : **rendre le rendement DeFi compréhensible, participatif et gratifiant.**
+“Goûte au rendement défendu.”
 
 ---
 
-## Use Case 2 — Le Catalogue d’Exécution (sélection, personnalisation, utilisation)
+## Use Case 1 — Le HiveFeed (classement, copy-trading, récompenses)
 
-C’est la porte d’entrée pour les utilisateurs finaux : entreprises, DAO, particuliers, ou bientôt agents intelligents.
+C’est le cœur battant de la ruche : un fil d’activité où les stratégies se classent en direct selon leur performance, leur risque et leur adoption.
 
 ### Fonctionnalités clés
 
-- Bibliothèque hiérarchisée et vérifiée : classement par usage, fiabilité, audit et popularité.
-- Configuration simplifiée : l’utilisateur renseigne quelques paramètres et le contrat s’adapte.
-- Test sur sandbox : simulation sur un testnet dédié avant exécution réelle.
-- Suivi de vie du contrat : historique, journal d’exécution, retours communautaires, métriques d’efficacité.
+* **Classement dynamique** : mise à jour en temps réel selon les performances on-chain.
+* **Copy-trading simplifié** : un clic suffit pour copier une stratégie depuis son wallet connecté.
+* **Profils publics** : chaque créateur dispose d’un profil avec ses stratégies, son score et ses followers.
+* **Rewards communautaires** : lorsqu’une stratégie est copiée, son auteur reçoit automatiquement une part des frais générés.
+* **Effets sensoriels** : micro-vibration et buzz sonore lors du copy, symbolisant le dard et le nectar.
 
 ### Objectif
 
-Permettre à tout utilisateur — même non technique — de lancer un contrat intelligent fiable, audité et adapté à ses besoins, sans écrire une ligne de code. C’est la porte d’entrée universelle du Web3 pratique et sécurisé.
+Créer une expérience immersive et compétitive, où la performance est visible, partageable et gratifiée.
+NECTARX devient ainsi une **“bourse du rendement”**, où les meilleures stratégies émergent naturellement grâce à la communauté.
+
+---
+
+## Use Case 2 — Le HiveLab (simulation, création, projection)
+
+C’est le laboratoire où l’utilisateur teste, combine et affine ses stratégies avant publication ou exécution réelle.
+
+### Fonctionnalités clés
+
+* **Simulation intuitive** : glisser-déposer de curseurs pour définir la part de risque (Funambule, Père de famille, Papi).
+* **Connexion API** : agrégation en direct des données Binance, Hyperliquid, et autres plateformes partenaires.
+* **Visualisation simplifiée** : graphiques interactifs, prévisions APY et corrélations Risk/Reward.
+* **Publication instantanée** : transformer une simulation validée en stratégie publique copiée par la ruche.
+* **Historique des tests** : suivi et archivage des stratégies créées ou modifiées.
+
+### Objectif
+
+Donner à chacun — trader confirmé ou simple curieux — la possibilité de créer sa propre approche du rendement, sans code ni complexité.
+Le HiveLab, c’est le **“sandbox du rendement”**, le lieu où le nectar se prépare avant d’être partagé.
+
+---
+
+## Use Case 3 — Le NectarDrop (récompenses, statuts, airdrops)
+
+La plateforme récompense la participation active.
+Chaque action — copie, création, partage, performance — génère du **$NECTAR**, la monnaie interne de la ruche.
+
+### Fonctionnalités clés
+
+* **Système de points dynamique** : cumule du nectar à chaque interaction réussie.
+* **Badges & rangs** : du Butineur au Gardien, jusqu’à l’Alchimiste.
+* **Airdrop programmé** : chaque participant éligible reçoit un multiplicateur selon son engagement.
+* **Claim sensoriel** : lors du “Claim reward 🍯”, une légère vibration et un son “drip” marquent la récolte du miel.
+
+### Objectif
+
+Renforcer l’engagement et la fidélité à l’écosystème.
+Le NectarDrop transforme la participation en expérience sensorielle et émotionnelle.
 
 ---
 
 ## Modèle économique et rentabilité
 
-La rentabilité repose sur plusieurs leviers complémentaires :
+Le modèle repose sur la circulation et la valorisation du nectar :
 
-1. Frais de déploiement et d’exécution : petite commission (incluant éventuellement le gas) à chaque déploiement via la plateforme.
-2. Abonnements premium : accès à features avancées (analytics, audits automatiques, mises à jour, API).
-3. Marketplace revenue sharing : partage de revenus avec les créateurs (ex. modèle 70/30), classement et effet réseau.
-4. Services B2B / audit / API : offres pour entreprises et intégrateurs.
-5. Usage par des IA : via le protocole MCP, chaque interaction automatisée génère des micro‑transactions récurrentes.
+1. **Frais de transaction internes** : prélèvement d’un faible pourcentage sur chaque stratégie copiée.
+2. **Redevances créateur** : partage automatique des commissions entre copieur et auteur.
+3. **Partenariats plateformes** : exonération de frais sur certaines paires “Builder Code” (favorisant les intégrations partenaires).
+4. **Airdrops & tokenomics** : émission progressive du $NECTAR pour récompenser la participation et le partage.
+5. **Accès premium** : outils avancés de backtesting, signaux API, alertes temps réel.
 
-Ces leviers combinés assurent des revenus récurrents et scalables : commissions par tx, abonnements et services enterprise.
-
----
-
-## Synergie avec l’IA et le protocole MCP
-
-L’infrastructure est pensée pour accueillir des agents intelligents autonomes. Le MCP (Model‑Contract Protocol) permet aux IA de :
-
-- Chercher, comprendre et choisir des smart contracts pertinents (métadonnées standardisées).
-- Interagir directement avec les contrats (API ou appels on‑chain).
-- Superviser l’exécution dans un cadre vérifiable et traçable.
-
-La plateforme devient ainsi le socle de confiance des intelligences artificielles : un catalogue de contrats sûrs, transparents et adaptés à une logique d’action autonome.
+Ce modèle hybride combine **économie communautaire, incitations comportementales et revenus récurrents.**
 
 ---
 
-## Rôle stratégique vis‑à‑vis du MCP
+## Dimension communautaire et narrative
 
-Le Smart Contracts Studio joue trois rôles stratégiques :
+La ruche est au cœur du concept : un réseau d’individus interconnectés, productifs et solidaires.
+Chaque membre participe à la création de valeur collective.
 
-1. Répertoire normalisé : fournir des manifests/ABI/métadonnées pour indexation par des modèles IA.
-2. Exécution contrôlée : APIs, sandboxing et politiques d’accès fines (autorisation, confidentialité, droit IP).
-3. Monétisation des agents : modèles de facturation par exécution/abonnement pour les interactions IA.
+* **“Piquer sans piquer”** : la compétition existe, mais la récompense est partagée.
+* **“Goûter le rendement défendu”** : l’accès aux stratégies autrefois réservées aux fonds institutionnels est enfin ouvert à tous.
+* **“Le dard et le nectar”** : symbole de tension, d’énergie et de désir — une finance vivante, organique et charnelle.
 
-En intégrant le MCP, la plateforme devient un point d’entrée privilégié pour l’économie des agents, en garantissant sécurité, traçabilité et rémunération.
+---
+
+## Vision long terme
+
+NECTARX ambitionne de devenir **la première ruche décentralisée du rendement**, interconnectée avec les principales plateformes DeFi.
+À terme, elle évoluera vers un écosystème complet :
+
+* **App mobile dédiée** (UX simplifiée pour grand public)
+* **Intégration multi-chain** (Solana, Polygon, Base, etc.)
+* **IA de recommandation** (sélection automatique de stratégies selon ton profil de risque)
+* **DAO communautaire** (gouvernance et redistribution du nectar)
 
 ---
 
 ## Conclusion
 
-Le Smart Contracts Studio vise à baisser drastiquement la barrière d’entrée au Web3, à créer une économie de créateurs pérenne, et à servir d’infrastructure fiable pour l’intégration future d’agents IA via le MCP. Son modèle combine accessibilité, sécurité et monétisation, et positionne la plateforme comme un hub stratégique entre développeurs, entreprises, utilisateurs et intelligences artificielles.
+NECTARX redéfinit la finance décentralisée comme une expérience sensorielle et collective.
+Ce n’est plus un outil pour initiés, mais une ruche vivante où chacun peut explorer, apprendre, partager et gagner.
+
+> **NECTARX** — la douceur du rendement, la force du collectif.
+> *Goûte au rendement défendu.*
 
 ---
 
-*Si tu veux, j’intègre aussi cette synthèse dans le README principal ou je crée une page dédiée sur le site (suggestion : `SYNTHESE.md` ou `docs/synthese.md`).*
+Souhaites-tu que je t’en fasse une **mise en page Markdown (pour ton Notion ou GitHub)** ou une **version PDF avec couleurs et logo NECTARX** dans le même style que le diagramme ?
