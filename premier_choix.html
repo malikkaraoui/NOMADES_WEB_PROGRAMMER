@@ -46,6 +46,18 @@
       max-width:420px;
       text-align:center;
     }
+    .clock {
+      margin-top:12px;
+      padding:12px 24px;
+      background: linear-gradient(135deg, rgba(22,163,74,0.15), rgba(5,25,35,0.3));
+      border-radius:8px;
+      color:#16a34a;
+      font-size:28px;
+      font-weight:700;
+      font-family: 'Courier New', monospace;
+      letter-spacing:2px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 <body>
@@ -55,6 +67,9 @@
     <button class="choice" data-action="créateur" type="button" aria-label="Choisir Créateur">Créateur</button>
 
     <div class="message" id="message" role="status" aria-live="polite">Faites un choix pour commencer</div>
+    
+    <!-- Horloge en temps réel -->
+    <div class="clock" id="clock" aria-label="Horloge en temps réel">--:--:--</div>
 
     <!-- Vues conditionnelles : user store et creator form -->
     <div id="user-store" style="display:none; margin-top:24px; width:100%; max-width:960px;">
@@ -142,6 +157,26 @@
           document.documentElement.classList.add('reduced-motion');
         }
       }catch(e){}
+
+      /*
+       * Horloge en temps réel
+       * Met à jour l'affichage toutes les secondes avec HH:MM:SS
+       */
+      function updateClock() {
+        var clockEl = document.getElementById('clock');
+        if (!clockEl) return;
+        
+        var now = new Date();
+        var hours = String(now.getHours()).padStart(2, '0');
+        var minutes = String(now.getMinutes()).padStart(2, '0');
+        var seconds = String(now.getSeconds()).padStart(2, '0');
+        
+        clockEl.textContent = hours + ':' + minutes + ':' + seconds;
+      }
+      
+      // Lancer l'horloge immédiatement et la mettre à jour chaque seconde
+      updateClock();
+      setInterval(updateClock, 1000);
       
       /*
        * Marketplace rendering (minimaliste) :
