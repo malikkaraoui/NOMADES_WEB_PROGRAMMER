@@ -83,7 +83,7 @@
     <div id="creator-form" style="display:none; margin-top:24px; width:100%; max-width:720px; color:#cfeee3;">
       <h2 style="margin:0 0 12px 0; color:#cfeee3; text-align:center;">Créateur — Paramétrage du contrat</h2>
       <form id="form-creator" style="display:flex; flex-direction:column; gap:10px;">
-        <input name="name" placeholder="Nom du contrat (ex: Billetterie)" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;" />
+  <input name="nameUser" placeholder="Nom du contrat (ex: Billetterie)" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;" />
         <input name="symbol" placeholder="Symbole (ex: TICKET)" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;" />
         <textarea name="description" placeholder="Description courte" rows="3" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;"></textarea>
         <input name="initialSupply" placeholder="Supply initial (optionnel)" style="padding:10px; border-radius:6px; border:1px solid #233; background:#021; color:#cfeee3;" />
@@ -322,7 +322,7 @@
           e.preventDefault();
           var data = new FormData(form);
           var summary = 'Prévisualisation:\n' +
-            'Nom: ' + (data.get('name')||'<vide>') + '\n' +
+            'Nom: ' + (data.get('nameUser')||'<vide>') + '\n' +
             'Symbole: ' + (data.get('symbol')||'<vide>') + '\n' +
             'Desc: ' + (data.get('description')||'<vide>') + '\n' +
             'Pricing: ' + (data.get('pricing')||'<vide>') + '\n' +
