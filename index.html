@@ -162,16 +162,16 @@
        * Horloge en temps réel
        * Met à jour l'affichage toutes les secondes avec HH:MM:SS
        */
-      function updateClock() {
-        var clockEl = document.getElementById('clock');
-        if (!clockEl) return;
-        
-        var now = new Date();
-        var hours = String(now.getHours()).padStart(2, '0');
-        var minutes = String(now.getMinutes()).padStart(2, '0');
-        var seconds = String(now.getSeconds()).padStart(2, '0');
-        
-        clockEl.textContent = hours + ':' + minutes + ':' + seconds;
+      // change la fonction si dessous "updateclock" en utilisant const à la place de var
+       const updateClock = () => {
+         const clockEl = document.getElementById('clock');
+         if (!clockEl) return;
+         const now = new Date();
+         const hours = String(now.getHours()).padStart(2, '0');
+         const minutes = String(now.getMinutes()).padStart(2, '0');
+         const seconds = String(now.getSeconds()).padStart(2, '0');
+
+         clockEl.textContent = hours + ':' + minutes + ':' + seconds;
       }
       
       // Lancer l'horloge immédiatement et la mettre à jour chaque seconde
